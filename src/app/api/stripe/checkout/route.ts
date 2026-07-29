@@ -52,6 +52,7 @@ export async function POST(request: Request) {
   const consentAcceptedAt = new Date().toISOString();
   const consentMetadata = {
     digitalDeliveryConsent: "accepted",
+    digitalDeliveryConsentText: DIGITAL_DELIVERY_CONSENT_TEXT,
     digitalDeliveryConsentVersion: DIGITAL_DELIVERY_CONSENT_VERSION,
     digitalDeliveryConsentAcceptedAt: consentAcceptedAt,
     digitalDeliveryConsentScope: DIGITAL_DELIVERY_CONSENT_SCOPE,

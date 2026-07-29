@@ -20,6 +20,7 @@ export default async function CheckoutSuccessPage({
   let isPaid = false;
   let planName = "выбранный формат";
   let consentAcceptedAt = "";
+  let consentText = "";
 
   if (stripe && sessionId.startsWith("cs_")) {
     try {
@@ -32,6 +33,10 @@ export default async function CheckoutSuccessPage({
         session.metadata?.digitalDeliveryConsent === "accepted"
           ? (session.metadata.digitalDeliveryConsentAcceptedAt ?? "")
           : "";
+      consentText = consentAcceptedAt
+        ? (session.metadata?.digitalDeliveryConsentText ??
+          DIGITAL_DELIVERY_CONSENT_TEXT)
+        : "";
     } catch {
       isPaid = false;
     }
@@ -56,7 +61,7 @@ export default async function CheckoutSuccessPage({
             <p className="mt-0 mb-2 font-extrabold">
               Согласие на немедленную выдачу зафиксировано
             </p>
-            <p className="mt-0 mb-2">{DIGITAL_DELIVERY_CONSENT_TEXT}</p>
+            <p className="mt-0 mb-2">{consentText}</p>
             <p className="m-0 text-muted">
               Время:{" "}
               {new Date(consentAcceptedAt).toLocaleString("ru-RU", {
