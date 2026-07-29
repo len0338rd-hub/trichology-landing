@@ -1,0 +1,16 @@
+.next
+node_modules
+package-lock.json
+next-env.d.ts
+index.html
+reference/index.html
+reference/assets-original
+reference/screenshots
+MIGRATION_AUDIT.md
+MIGRATION_CHECKLIST.md
+reference/CHECKSUMS.md
+README.txt
+reference/README.txt
+coverage
+playwright-report
+test-results
