@@ -22,7 +22,9 @@ const purchaseEnvironment = isEmptyEnvironment
 
 export default defineConfig({
   testDir: "./tests/functional",
-  testMatch: isEmptyEnvironment ? "purchase-empty.spec.ts" : "purchase.spec.ts",
+  testMatch: isEmptyEnvironment
+    ? "purchase-empty.spec.ts"
+    : ["purchase.spec.ts", "privacy.spec.ts"],
   outputDir: isEmptyEnvironment
     ? "./test-results/functional-empty"
     : "./test-results/functional",

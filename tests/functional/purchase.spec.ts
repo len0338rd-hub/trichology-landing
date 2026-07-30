@@ -260,7 +260,6 @@ for (const screenshotCase of screenshotCases) {
       width: screenshotCase.width,
       height: screenshotCase.height,
     });
-    await page.goto("/", { waitUntil: "domcontentloaded" });
     await openPurchase(page, screenshotCase.testId);
     await page.screenshot({
       animations: "disabled",

@@ -85,6 +85,13 @@ export default function PurchasePolicyPage() {
           подтверждения оплаты, если для конкретного пакета не согласован иной
           срок.
         </p>
+        <p>
+          Персональные данные заказа обрабатываются согласно{" "}
+          <Link className="font-bold text-accent" href="/privacy">
+            Политике конфиденциальности RODO / GDPR
+          </Link>
+          .
+        </p>
 
         <h2 className="mt-9 font-serif text-2xl font-medium">
           3. Право отказаться от дистанционного договора

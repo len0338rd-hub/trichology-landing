@@ -101,6 +101,14 @@ export default function CookiesPolicyPage() {
           komunikacji elektronicznej и требований GDPR к добровольному,
           конкретному, информированному и однозначному согласию.
         </p>
+        <p>
+          Информация об администраторе данных, целях обработки и правах
+          пользователя находится в{" "}
+          <Link className="font-bold text-accent" href="/privacy">
+            Политике конфиденциальности RODO / GDPR
+          </Link>
+          .
+        </p>
 
         <p className="mt-10">
           <Link className="font-extrabold text-accent" href="/">

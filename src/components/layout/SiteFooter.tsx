@@ -1,7 +1,6 @@
 import { CookieSettingsButton } from "@/components/cookies/CookieSettingsButton";
 import { Container } from "@/components/ui/Container";
 import { footerContent } from "@/content/site";
-import { env } from "@/lib/env";
 
 export function SiteFooter() {
   return (
@@ -16,14 +15,14 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-[22px]">
           {footerContent.legalTriggers.map((trigger) => (
-            <button
-              className="cursor-pointer border-0 bg-transparent p-0 text-muted transition-colors hover:text-foreground"
+            <a
+              className="text-muted no-underline transition-colors hover:text-foreground"
               data-legal={trigger.documentId}
+              href={trigger.documentId === "offer" ? "/offer" : "/privacy"}
               key={trigger.documentId}
-              type="button"
             >
               {trigger.label}
-            </button>
+            </a>
           ))}
           <a
             className="text-muted no-underline transition-colors hover:text-foreground"
@@ -38,21 +37,12 @@ export function SiteFooter() {
             Политика cookies
           </a>
           <CookieSettingsButton />
-          {env.contactEmail ? (
-            <a
-              className="text-muted no-underline transition-colors hover:text-foreground"
-              href={`mailto:${env.contactEmail}`}
-            >
-              {footerContent.contact.label}
-            </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              className="cursor-not-allowed text-muted opacity-60"
-            >
-              {footerContent.contact.label}
-            </span>
-          )}
+          <a
+            className="text-muted no-underline transition-colors hover:text-foreground"
+            href="/contact"
+          >
+            {footerContent.contact.label}
+          </a>
         </div>
       </Container>
     </footer>
