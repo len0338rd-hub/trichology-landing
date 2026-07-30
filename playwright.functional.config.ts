@@ -24,7 +24,7 @@ export default defineConfig({
   testDir: "./tests/functional",
   testMatch: isEmptyEnvironment
     ? "purchase-empty.spec.ts"
-    : ["purchase.spec.ts", "privacy.spec.ts"],
+    : ["purchase.spec.ts", "privacy.spec.ts", "telegram-support.spec.ts"],
   outputDir: isEmptyEnvironment
     ? "./test-results/functional-empty"
     : "./test-results/functional",

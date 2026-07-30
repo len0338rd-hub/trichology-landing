@@ -16,6 +16,7 @@ export default function ContactPage() {
   const sellerAddress = env.sellerAddress ?? missingValue;
   const sellerTaxId = env.sellerTaxId ?? missingValue;
   const contactEmail = env.contactEmail;
+  const telegramUsername = env.telegramUsername?.replace(/^@+/, "");
 
   return (
     <main className="grid min-h-dvh place-items-center bg-background px-4 py-12 text-foreground sm:py-16">
@@ -51,11 +52,27 @@ export default function ContactPage() {
               missingValue
             )}
           </dd>
+          <dt className="font-bold">Telegram‑бот</dt>
+          <dd className="m-0">
+            {telegramUsername ? (
+              <a
+                className="font-extrabold text-accent"
+                href={`https://t.me/${telegramUsername}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                @{telegramUsername}
+              </a>
+            ) : (
+              "Будет добавлен после настройки"
+            )}
+          </dd>
         </dl>
 
         <p className="mt-6 text-muted">
           По этому адресу можно направлять вопросы о заказе, запросы на возврат,
-          рекламации и обращения по RODO / GDPR.
+          рекламации и обращения по RODO / GDPR. В Telegram‑бот не следует
+          отправлять медицинские документы и чувствительные данные.
         </p>
         <p className="mt-8">
           <Link className="font-extrabold text-accent" href="/">

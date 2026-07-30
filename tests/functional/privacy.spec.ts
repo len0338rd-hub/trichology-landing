@@ -52,4 +52,7 @@ test("контакты доступны из footer даже без JavaScript",
     page.getByRole("heading", { level: 1, name: "Контакты" }),
   ).toBeVisible();
   await expect(page.getByText("0001224953")).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "@TEST_TELEGRAM" }),
+  ).toHaveAttribute("href", "https://t.me/TEST_TELEGRAM");
 });
