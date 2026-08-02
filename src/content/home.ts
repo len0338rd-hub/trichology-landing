@@ -139,15 +139,15 @@ export const incomeCalculationContent = {
   heading:
     "Одна небольшая add-on услуга способна заметно изменить доход мастера",
   rows: [
-    { label: "2 клиента в день", value: "× 20 PLN" },
-    { label: "× 20 рабочих дней", value: "+800 PLN / месяц" },
+    { label: "2 клиента в день", value: "× 80 PLN" },
+    { label: "× 20 рабочих дней", value: "+3 200 PLN / месяц" },
   ],
-  result: "+800 PLN / месяц",
+  result: "+3 200 PLN / месяц",
   values: {
     clientsPerDay: 2,
-    addonPrice: 20,
+    addonPrice: 80,
     workingDays: 20,
-    monthlyResult: 800,
+    monthlyResult: 3200,
     currency: "PLN",
   },
 } as const satisfies IncomeCalculationContent;

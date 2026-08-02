@@ -326,6 +326,14 @@ const combinedContent = contentSources.join("\n");
 const requiredTypedContentStrings = requiredSourceStrings.filter(
   (value) =>
     !value.includes("УКАЖИТЕ") &&
+    value !== "× 20 PLN" &&
+    value !== "+800 PLN / месяц" &&
+    value !== "Публичная оферта — шаблон" &&
+    value !==
+      "Перед публикацией замените реквизиты продавца и проверьте текст под вашу форму деятельности." &&
+    value !== "Политика конфиденциальности — шаблон" &&
+    value !==
+      "Имя, email, Telegram и подтверждение оплаты используются только для обработки заказа, предоставления доступа и сопровождения в выбранном формате." &&
     value !== "Эстетическая трихология, которая усиливает экспертность и" &&
     value !== "Карта / счёт: УКАЖИТЕ РЕКВИЗИТЫ" &&
     value !== "Получатель: УКАЖИТЕ ИМЯ" &&
@@ -336,6 +344,19 @@ const requiredTypedContentStrings = requiredSourceStrings.filter(
 
 for (const required of requiredTypedContentStrings) {
   requireIncludes("Типизированный контент", combinedContent, required);
+}
+
+for (const currentProductionContent of [
+  "× 80 PLN",
+  "+3 200 PLN / месяц",
+  "Публичная оферта и условия продажи",
+  "Политика конфиденциальности RODO / GDPR",
+]) {
+  requireIncludes(
+    "Актуальный production-контент",
+    combinedContent,
+    currentProductionContent,
+  );
 }
 
 for (const forbiddenPlaceholder of [
